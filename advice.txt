@@ -1,0 +1,104 @@
+- 'static' keywords only one instance exists for every instantiation.
+
+- 'final' keyword -- the value never changes
+
+- int is 32bit regardless of platform.
+
+- char represents 16-bit "unicode character"
+
+- String is UTF-16 unicode
+
+- labeled break/continue allow breaking/continuing out of labeled loops
+  (instead of just innermost)
+
+- Varargs allow passing any number of parameters of same type. Then
+  arguments can be accessed by using array notation. 
+
+- Primitive data types are passed by value, objects are passed by reference.
+
+- Methods must return the the exact class or a subclass of return type. It can
+  also return an interface (whaaa?)
+
+- class modifiers:
+  public: visible to everyone
+  package-private (no modifier): visible only to others in package
+
+
+-  member modifiers:
+  public: visible to everyone
+  protected: only accessible within own package and in subclasses
+  package-privatate (no modifier): visible to others in package
+  private: only accessible within own class
+
+- static block in a class runs at start time, used to initialize static
+  variables
+
+- Static nested classes
+  (nonstatic) inner class
+
+- Nested classes can shadow variables in outer class. To access a variable
+  in the outer scope, you must refer to the class name. 
+
+- Don't try to serialize inner classes, it will mess with compatability.
+
+- Can do local and anonymous classes. Anonymous classes are implemented by using
+  the name of the class to extend or interface to implement.
+
+Annotations:
+
+- Annotations for processing at compile-time, runtime or deployment-time.
+
+- @Override specifies the method overrides a method in a superclass. It is
+  not necessary, but prevents errors.
+
+- @NonNull ensures your object can never be assigned to null
+
+Interfaces: 
+
+- Default methods allow you do add new functionality to existing interfaces. 
+
+Inheretance:
+
+- Classes can have fields, interfaces do not.
+
+- Overridden methods can return a subtype of the type of the overridden
+  method.
+
+- A static method with the same name as a method in the super class "hides" the
+  method. 
+
+- If a class inherets methods from superclass and implements interfaces with
+  methods of the same name, the method from the superclass is preferred. 
+
+- If a class C inherets multiple interfaces A1 and A2, both of which extend interface A3. A1 
+  overridesa a default method, but A2 doesn't. Calling that method on C will 
+  choose the method in A1.
+
+- If a class has a method with the same name as an interferface abstract method and another class
+  extends the first class, this fulfills the interface.
+
+- We can invoke overridden method by using "super" keyword.
+
+- 'final' disallows overriding by subclasses
+
+- Abstract classes also allow us to specify class fields that aren't final static.
+
+General Advice:
+
+- New variables with basic datatype get sensible defaults. Likewise with arrays.
+- Q: What about arrays of objects?
+
+
+- Instead of converting to a charArray (allocated new space), use charAt() (constant time).
+
+- String.length is O(1). 
+
+- HashMap is preferred over Hashtable.
+
+- Access static fields only thru class names, not instances.
+
+Check out:
+
+- Checker library for stronger types!
+
+- 
